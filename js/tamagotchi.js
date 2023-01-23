@@ -7,7 +7,9 @@ class Tamagotchi {
     this.age = 0 // initally
     }
 }
+
 giveName = prompt("Please give your Tamagotchi a name", "")
+
 
 hector = new Tamagotchi('Hector')
 
@@ -20,17 +22,56 @@ function aging() {
 
 console.log(aging)
 
-function bedtime(){
-    document.body.style.background
+let start = Date.now(); // remember start time
+
+function bedtime() {
+    document.body.style.opacity = .2 // darkens page (night time)
+    if (timePassed >= 3000) {
+        clearInterval(bedtime); // finish the animation after 2 seconds
+        return;
+      }
+}
+
+function feed() {
+    document.body.animate
+}
+
+function play() {
+
 }
 
 let button1 = document.querySelector(".button1")
 let button2 = document.querySelector(".button2")
 let button3 = document.querySelector(".button3")
 
-button1.addEventListener("click", )
-button2.addEventListener("click", )
-button3.addEventListener("click", )
+button1.addEventListener("click", feed)
+button2.addEventListener("click", bedtime)
+button3.addEventListener("click", play)
+
+
+// let start = Date.now(); // remember start time
+
+let timer = setInterval(function() {
+  // how much time passed from the start?
+  let timePassed = Date.now() - start;
+
+  if (timePassed >= 2000) {
+    clearInterval(timer); // finish the animation after 2 seconds
+    return;
+  }
+
+  // draw the animation at the moment timePassed
+  draw(timePassed);
+
+}, 20);
+
+// as timePassed goes from 0 to 2000
+// left gets values from 0px to 400px
+function draw(timePassed) {
+  train.style.left = timePassed / 5 + 'px';
+}
+
+
 
 
 // const button1 = document.querySelectorAll(".button1")
@@ -40,3 +81,26 @@ button3.addEventListener("click", )
 //         alert('You clicked a button!')
 //     })
 // }
+
+// (document).ready(function() {
+//     var width = (document).width();
+//     function appear() {
+//         document.images.style.appear = "appear"
+//     }
+//     function goRight() {
+//         (".taco").animate({
+//         left: width
+//       }, 5000, function() {
+//          setTimeout(goLeft, 50);
+//       });
+//     }
+//     function goLeft() {
+//         (".taco").animate({
+//         left: 0
+//       }, 5000, function() {
+//          setTimeout(goRight, 50);
+//       });
+//     }
+
+//     setTimeout(goRight, 50);
+// });
