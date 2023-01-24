@@ -51,7 +51,7 @@ img.ghosty {
     position: fixed;
     z-index: 1;
 }
-img.taco {
+#taco {
     height: 100px;
     width: 150px;
     top: 60%;
@@ -59,7 +59,7 @@ img.taco {
     position: fixed;
     visibility: hidden;
 }
-img.ball {
+#ball {
     height: 80px;
     width: 80px;
     top: 60%;

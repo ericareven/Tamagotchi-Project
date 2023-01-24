@@ -4,9 +4,17 @@ class Tamagotchi {
     constructor(name) {
     this.name = name;
     this.hunger = 0;
-    this.sleepiness = 0;
-    this.boredom = 0;
+    this.sleep = 0;
+    this.bored = 0;
     this.age = 0; // initally
+    setInterval(() => {
+        this.hunger +=2
+        this.sleep +=2
+        this.bored +=2
+        hungerLevel.innerHTML = this.hunger
+        sleepLevel.innerHTML = this.sleep
+        boredLevel.innerHTML = this.bored
+    }, 2000)
     }
     // getHungry (){
     //     for(let i = 0; i<=100; i++) {
@@ -90,6 +98,11 @@ function bedtime() {
         return;
       }
 }
+
+function play() {
+    document.getElementById("ball").style.visibility = "visible"
+}
+console.log(play)
 
 // function feed() {
 //     document.body.animate
