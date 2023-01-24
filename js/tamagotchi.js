@@ -7,14 +7,14 @@ class Tamagotchi {
     this.sleep = 0;
     this.bored = 0;
     this.age = 0; // initally
-    setInterval(() => {
-        this.hunger +=2
-        this.sleep +=2
-        this.bored +=2
-        hungerLevel.innerHTML = this.hunger
-        sleepLevel.innerHTML = this.sleep
-        boredLevel.innerHTML = this.bored
-    }, 2000)
+    // setInterval(() => {
+    //     this.hunger +=2
+    //     this.sleep +=2
+    //     this.bored +=2
+    //     hungerLevel.innerHTML = this.hunger
+    //     sleepLevel.innerHTML = this.sleep
+    //     boredLevel.innerHTML = this.bored
+    // }, 2000)
     }
     // getHungry (){
     //     for(let i = 0; i<=100; i++) {
@@ -25,9 +25,12 @@ class Tamagotchi {
     //     }
     // }
     getSleepy () {
-        setInterval(() => {
-            this.sleepy +=2
-        }, 2000)
+        // setInterval(() => {
+        //     this.sleep +=2
+        //     sleepLevel.innerHTML = this.sleep
+        // }, 2000)
+        this.sleep +=2
+        sleepLevel.innerHTML = this.sleep
         if(this.sleepy === 50) {
             alert(`I'm getting sleepy`)
         } else if(this.sleepy === 80){
@@ -39,16 +42,18 @@ class Tamagotchi {
             alert(`Game Over`)
         }
     }
-    // getBored() {
-
+    // // getBored() {
+    // getSleepy()
+    // // }
+    // aging() {
+    //     for(let i = 0; i<= 50; i++) {
+    //         setInterval(this.age, 10000) // inc age every 10 seconds
+    //     }
+    //     return this.age
     // }
-    aging() {
-        for(let i = 0; i<= 50; i++) {
-            setInterval(this.age, 10000) // inc age every 10 seconds
-        }
-        return this.age
-    }
 }
+
+console.log(getSleepy().setInterval(2000))
 
 let instructions = ""
 
