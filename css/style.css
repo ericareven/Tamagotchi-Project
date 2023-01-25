@@ -32,7 +32,15 @@ button {
   }
 li {
     display: inline;
-    padding: 20px
+    padding: 20px;
+    text-align: center;
+    justify-self: center;
+}
+div.levels {
+    display: inline;
+    text-align: center;
+    word-spacing: 70px;
+    justify-self: center;
 }
 img.bg {
     min-height: 100%;

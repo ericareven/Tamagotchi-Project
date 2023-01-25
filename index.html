@@ -8,7 +8,6 @@
   <body>
     <header>
         <h1 id="name"></h1>
-        <button class="start">Start</button>
     </header>
     <script type="text/javascript" src="js/tamagotchi.js"></script>
     <img src="images/evergreen-2025158.png" alt="background forest" class="bg"> 
@@ -19,19 +18,22 @@
         <img src="images/Download_premium_vector_of_Hand_drawn_traditional_taco_Mexican_food_vector_about_taco__mexican__mexican_food__taco_vector__and_tacos_illustration_1187066-removebg-preview.png" alt="taco" id="taco">
         <img src="images/Toy_Ball_Clipart_PNG_Images__Colored_Ball_Hand_Drawn_Ball_Beautiful_Round_Ball_Illustration_Childrens_Toy_Ball__Beach_Ball_Clipart__Round_Ball__Cartoon_Ball_PNG_Image_For_Free_Download-removebg-previe.png" alt="ball" id="ball">
     </div>
-    <h1>Tamagotchi Stats</h1>
-    <ul>
-        <li class="hunger-text">Hunger</li>
-        <li class="sleep-text">Sleepiness</li>
-        <li class="bored-text">Boredom</li>
-        <!-- <li class="age-text">Age</li> -->
-    </ul>
-    <ul>
-        <li class="hungerLevel">0</li>
-        <li class="sleepLevel">0</li>
-        <li class="boredLevel">0</li>
-        <!-- <li class="ageLevel">0</li> -->
-    </ul>
+    <div class="levelText">
+        <ul>
+            <li id="hunger-text">Hunger</li>
+            <li id="sleep-text">Sleepiness</li>
+            <li id="bored-text">Boredom</li>
+            <!-- <li class="age-text">Age</li> -->
+        </ul>
+    </div>
+    <div class="levels">
+        <ul>
+            <li id="hungerLevel">0</li>
+            <li id="sleepLevel">0</li>
+            <li id="boredLevel">0</li>
+            <!-- <li class="ageLevel">0</li> -->
+        </ul>
+    </div>
     <div class="allbuttons">
         <button class="button1">Feed</button>
         <button class="button2">Sleep</button>
