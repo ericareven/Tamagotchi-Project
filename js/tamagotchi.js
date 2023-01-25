@@ -23,7 +23,7 @@ function getHungry() {
     newPet.hunger +=2
     document.getElementById("hungerLevel").innerHTML = newPet.hunger;
         if(newPet.hunger === 50) {
-            alert(`Is it snack time yet?`)
+            alert(`Can I have a snack?`)
         } else if(newPet.hunger === 80){
             alert(`I haven't eaten in forever!!`)
         } else if(newPet.hunger === 90) {
@@ -103,14 +103,10 @@ button2.addEventListener("click", bedtime)
 button3.addEventListener("click", play)
 
 
-let ageInterval = setInterval(increaseAge, 10000)
+setInterval(increaseAge, 10000)
 function increaseAge() {
-    if (newPet.hunger >= 100 || newPet.sleepiness >= 100 || newPet.boredom >= 100) {
-        clearInterval(ageInterval)
-    } else {
         newPet.age++;
         displayAge();
-    }
 }
     function displayAge() {
         let age = newPet.age;
