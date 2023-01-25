@@ -6,10 +6,11 @@ However, I am unable to reverse them so that they can revert back to hidden or n
 
 I'd like to animate the ball and taco to go from the feed and play button to the pet and then disappear
 
+BUGS
 
-!!!
-The Game Over html/css/js work and bring you back to play the game again
+when sleep button is pressed, the functions runs but "undefined" populates first in the level section
 
-...
-But the Game Over code at the end of the game does not bring you to the game over window
+evolve code is not working
+
+
 

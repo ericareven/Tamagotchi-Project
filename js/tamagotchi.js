@@ -30,6 +30,7 @@ function getHungry() {
             alert(`I'm starving!!'`)
         } else if(newPet.hunger === 100) {
             alert(`${petName} has starved to death.`)
+            document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/Tamagotchi-Project/gameOver.html")
         }
     }
 
@@ -46,6 +47,7 @@ function getSleepy() {
         alert(`I need sleep!!`)
     } else if(newPet.sleepiness === 100) {
         alert(`${petName} has died of over exhaustion.`)
+        document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/Tamagotchi-Project/gameOver.html")
     }
 }
 
@@ -62,6 +64,7 @@ function getBored() {
         alert(`I'm so bored I could literally die!`)
     } else if(newPet.bored === 100) {
         alert(`${petName} has died of boredom.`)
+        document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/Tamagotchi-Project/gameOver.html")
     }
 }
 
@@ -115,40 +118,31 @@ function increaseAge() {
             document.getElementById("age").innerHTML = petName + " is " + age + " year old";
         } else if(age % 5 === 0){
             document.getElementById("age").innerHTML = petName + " is " + age + " years old";
-            alert(`It is time to evolve, click on your pet.`)
+            alert(`It is time to evolve, click on your pet.`);
+            document.getElementsByClassName("evolve").style.visibility = "visible"
         } else {
             document.getElementById("age").innerHTML = petName + " is " + age + " years old";
         }
       }
 
 
-let petEvolve = document.getElementsByClassName("ghosty")
-let currWidth = petEvolve.clientWidth
-let currHeight = petEvolve.clientHeight
-
-// setInterval(evolve, 10000)
-
-function evolve() {
-        petEvolve.clientHeight = (currHeight + 50) + "px"
-        petEvolve.clientWidth = (currWidth + 50) + "px"
-    }
-
-let evolveTime = document.querySelector(".ghosty")
-evolveTime.addEventListener("click", evolve)
-
-console.log(evolve)
+// let petEvolve = document.getElementsByClassName("evolve")
+// let currWidth = petEvolve.clientWidth
+// let currHeight = petEvolve.clientHeight
 
 
+// function evolve() {
+//         petEvolve.clientHeight = (currHeight + 50) + "px"
+//         petEvolve.clientWidth = (currWidth + 50) + "px"
+//     }
 
-function gameOver() {
-    if(newPet.hunger >= 100 || newPet.sleepiness >= 100 || newPet.boredom >= 100) {
-        document.location.replace("file:///Users/erica.reven/Desktop/seir-eustoma/projects/Tamagotchi-Project/gameOver.html")
-        alert('Game Over')
-    }
-    
-}
 
-console.log(gameOver)
+// let evolveTime = document.querySelector(".evolve")
+// evolveTime.addEventListener("click", evolve)
+
+// console.log(evolve)
+
+
 
 
 })

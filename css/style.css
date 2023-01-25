@@ -33,7 +33,25 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
+}
+div.evolve {
+    position: absolute;
+    text-align: center;
+    bottom: 30px;
+    right: 20px;
+    width: 7%;
+}
+.evolve {
+    background-color: #ed0aed; /* Green */
+    border: none;
+    color: rgb(9, 9, 9);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    visibility: hidden;
+}
 li {
     display: inline;
     padding: 20px;
