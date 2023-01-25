@@ -4,7 +4,7 @@ class Tamagotchi {
     constructor(name) {
     this.name = name;
     this.hunger = 0;
-    this.sleep = 0;
+    this.sleepiness = 0;
     this.bored = 0;
     this.age = 0; // initally
     // setInterval(() => {
@@ -16,6 +16,11 @@ class Tamagotchi {
     //     boredLevel.innerHTML = this.bored
     // }, 2000)
     }
+    getHunger(){
+        setInterval(() => {
+        this.hunger += 2
+        }, 2000)
+    }
     // getHungry (){
     //     for(let i = 0; i<=100; i++) {
     //         this.hunger +=2
@@ -24,24 +29,24 @@ class Tamagotchi {
     //         }
     //     }
     // }
-    getSleepy () {
-        // setInterval(() => {
-        //     this.sleep +=2
-        //     sleepLevel.innerHTML = this.sleep
-        // }, 2000)
-        this.sleep +=2
-        sleepLevel.innerHTML = this.sleep
-        if(this.sleepy === 50) {
-            alert(`I'm getting sleepy`)
-        } else if(this.sleepy === 80){
-            alert(`YAWN! I'm getting very sleepy!`)
-        } else if(this.sleepy === 90) {
-            alert(`I NEED TO SLEEP!`)
-        } else if(this.sleepy === 100) {
-            document.body.style.backgroundColor = "black"
-            alert(`Game Over`)
-        }
-    }
+    // getSleepy () {
+    //     // setInterval(() => {
+    //     //     this.sleep +=2
+    //     //     sleepLevel.innerHTML = this.sleep
+    //     // }, 2000)
+    //     this.sleep +=2
+    //     sleepLevel.innerHTML = this.sleep
+    //     if(this.sleepy === 50) {
+    //         alert(`I'm getting sleepy`)
+    //     } else if(this.sleepy === 80){
+    //         alert(`YAWN! I'm getting very sleepy!`)
+    //     } else if(this.sleepy === 90) {
+    //         alert(`I NEED TO SLEEP!`)
+    //     } else if(this.sleepy === 100) {
+    //         document.body.style.backgroundColor = "black"
+    //         alert(`Game Over`)
+    //     }
+    // }
     // // getBored() {
     // getSleepy()
     // // }
@@ -53,7 +58,7 @@ class Tamagotchi {
     // }
 }
 
-console.log(getSleepy().setInterval(2000))
+// console.log(getSleepy().setInterval(2000))
 
 let instructions = ""
 
@@ -61,6 +66,57 @@ const petName = prompt(`What would you like to name your Tamagotchi pet?`).toUpp
 const newPet = new Tamagotchi(petName)
 const nameId = document.querySelector('#name')
 nameId.innerHTML = `${petName}`
+
+
+newPet.getHunger()
+
+
+function getHungry(e) {
+    e.preventDefault()
+    setInterval(()=> {
+        document.getElementById("hungerLevel").innerHTML = newPet.hunger +=2
+        if(newPet.hunger === 50) {
+            alert(`Is it snack time yet?`)
+        } else if(newPet.hunger === 80){
+            alert(`I haven't eaten in forever!!`)
+        } else if(newPet.hunger === 90) {
+            alert(`I'm starving!!'`)
+        } else if(newPet.hunger === 100) {
+            document.body.style.backgroundColor = "black"
+            alert(`Game Over`)
+        }
+    }, 2000)
+}
+
+function getSleepy(e) {
+    e.preventDefault()
+    newPet.sleepiness +=2
+    if(newPet.sleepiness === 50) {
+        alert(`Is it nap time yet?`)
+    } else if(newPet.sleepiness === 80){
+        alert(`YAWN! I am so sleepy.`)
+    } else if(newPet.sleepiness === 90) {
+        alert(`I need sleep!!`)
+    } else if(newPet.sleepiness === 100) {
+        document.body.style.backgroundColor = "black"
+        alert(`Game Over`)
+    }
+}
+
+function getBored(e) {
+    e.preventDefault()
+    newPet.bored +=2
+    if(newPet.bored === 50) {
+        alert(`Can you play with me? I'm bored.`)
+    } else if(newPet.bored === 80){
+        alert(`Ughh I have never been so bored in my life!`)
+    } else if(newPet.bored === 90) {
+        alert(`I'm so bored I could literally die!`)
+    } else if(newPet.bored === 100) {
+        document.body.style.backgroundColor = "black"
+        alert(`Game Over`)
+    }
+}
 
 // function start {
     
