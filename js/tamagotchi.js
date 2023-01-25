@@ -10,8 +10,8 @@ class Tamagotchi {
     }
 }
 
-
-// let instructions = ""
+let instructions = "Let's play Tamagotchi! Keep your pet alive and happy by playing with and feeding it, and don't forget to let it rest. If it's Hunger, Sleepiness, or Boredom levels reach 100, your pet will die! Ready to begin?"
+alert(instructions)
 
 const petName = prompt(`What would you like to name your Tamagotchi pet?`).toUpperCase()
 const newPet = new Tamagotchi(petName)
@@ -29,8 +29,7 @@ function getHungry() {
         } else if(newPet.hunger === 90) {
             alert(`I'm starving!!'`)
         } else if(newPet.hunger === 100) {
-            document.body.style.backgroundColor = "black"
-            alert(`Game Over`)
+            alert(`${petName} has starved to death.`)
         }
     }
 
@@ -46,8 +45,7 @@ function getSleepy() {
     } else if(newPet.sleepiness === 90) {
         alert(`I need sleep!!`)
     } else if(newPet.sleepiness === 100) {
-        document.body.style.backgroundColor = "black"
-        alert(`Game Over`)
+        alert(`${petName} has died of over exhaustion.`)
     }
 }
 
@@ -63,36 +61,33 @@ function getBored() {
     } else if(newPet.bored === 90) {
         alert(`I'm so bored I could literally die!`)
     } else if(newPet.bored === 100) {
-        document.body.style.backgroundColor = "black"
-        alert(`Game Over`)
+        alert(`${petName} has died of boredom.`)
     }
 }
 
 setInterval(getBored, 1000)
 
+
 function feed() {
-    // document.body.style.opacity = .2 // darkens page (night time)
-    newPet.hunger -= 5
+    // document.getElementById("taco").style.visibility = "visible"
+    newPet.hunger -= 6
     document.getElementById("hungerLevel").innerHTML = newPet.hunger;
 }
 
 
 function bedtime() {
     // document.body.style.opacity = .2 // darkens page (night time)
-    newPet.sleepiness -= 5
+    newPet.sleepiness -= 6
     document.getElementById("sleepLevel").innerHTML = newPet.sleep;
 }
 
 
 
 function play() {
-    // document.body.style.opacity = .2 // darkens page (night time)
-    newPet.bored -= 5
+    // document.getElementById("ball").style.visibility = "visible"
+    newPet.bored -= 6
     document.getElementById("boredLevel").innerHTML = newPet.bored;
 }
-// function play() {
-//     document.getElementById("ball").style.visibility = "visible"
-// }
 
 
 let button1 = document.querySelector(".button1")
@@ -105,62 +100,55 @@ button2.addEventListener("click", bedtime)
 button3.addEventListener("click", play)
 
 
+let ageInterval = setInterval(increaseAge, 10000)
+function increaseAge() {
+    if (newPet.hunger >= 100 || newPet.sleepiness >= 100 || newPet.boredom >= 100) {
+        clearInterval(ageInterval)
+    } else {
+        newPet.age++;
+        displayAge();
+    }
+}
+    function displayAge() {
+        let age = newPet.age;
+        if (age === 1) {
+            document.getElementById("age").innerHTML = petName + " is " + age + " year old";
+        } else if(age % 5 === 0){
+            document.getElementById("age").innerHTML = petName + " is " + age + " years old";
+            alert(`It is time to evolve, click on your pet.`)
+        } else {
+            document.getElementById("age").innerHTML = petName + " is " + age + " years old";
+        }
+      }
 
 
-// let start = Date.now(); // remember start time
-/*
-let timer = setInterval(function() {
-  // how much time passed from the start?
-  let timePassed = Date.now() - start;
+let petEvolve = document.getElementsByClassName("ghosty")
+let currWidth = petEvolve.clientWidth
+let currHeight = petEvolve.clientHeight
 
-  if (timePassed >= 2000) {
-    clearInterval(timer); // finish the animation after 2 seconds
-    return;
-  }
+// setInterval(evolve, 10000)
 
-  // draw the animation at the moment timePassed
-  draw(timePassed);
+function evolve() {
+        petEvolve.clientHeight = (currHeight + 50) + "px"
+        petEvolve.clientWidth = (currWidth + 50) + "px"
+    }
 
-}, 20);
+let evolveTime = document.querySelector(".ghosty")
+evolveTime.addEventListener("click", evolve)
 
-// as timePassed goes from 0 to 2000
-// left gets values from 0px to 400px
-function draw(timePassed) {
-  train.style.left = timePassed / 5 + 'px';
+console.log(evolve)
+
+
+
+function gameOver() {
+    if(newPet.hunger >= 100 || newPet.sleepiness >= 100 || newPet.boredom >= 100) {
+        document.location.replace("file:///Users/erica.reven/Desktop/seir-eustoma/projects/Tamagotchi-Project/gameOver.html")
+        alert('Game Over')
+    }
+    
 }
 
+console.log(gameOver)
 
-*/
-
-// const button1 = document.querySelectorAll(".button1")
-// for(let i = 0; i < buttons.length; i++){
-//     button1[i].addEventListener('click', (e)=>{
-//         e.preventDefault()
-//         alert('You clicked a button!')
-//     })
-// }
-
-// (document).ready(function() {
-//     var width = (document).width();
-//     function appear() {
-//         document.images.style.appear = "appear"
-//     }
-//     function goRight() {
-//         (".taco").animate({
-//         left: width
-//       }, 5000, function() {
-//          setTimeout(goLeft, 50);
-//       });
-//     }
-//     function goLeft() {
-//         (".taco").animate({
-//         left: 0
-//       }, 5000, function() {
-//          setTimeout(goRight, 50);
-//       });
-//     }
-
-//     setTimeout(goRight, 50);
-// });
 
 })
