@@ -115,28 +115,28 @@ function increaseAge() {
         } else if(age % 5 === 0){
             document.getElementById("age").innerHTML = petName + " is " + age + " years old";
             alert(`It is time to evolve, click on your pet.`);
-            document.getElementsByClassName("evolve").style.visibility = "visible"
+            document.querySelector(".evolves").style.visibility = "visible"
         } else {
             document.getElementById("age").innerHTML = petName + " is " + age + " years old";
         }
       }
 
 
-// let petEvolve = document.getElementsByClassName("evolve")
-// let currWidth = petEvolve.clientWidth
-// let currHeight = petEvolve.clientHeight
+let petEvolve = document.getElementsByClassName("evolve")
+let currWidth = petEvolve.clientWidth
+let currHeight = petEvolve.clientHeight
 
 
-// function evolve() {
-//         petEvolve.clientHeight = (currHeight + 50) + "px"
-//         petEvolve.clientWidth = (currWidth + 50) + "px"
-//     }
+function evolve() {
+        petEvolve.clientHeight = (currHeight + 50) + "px"
+        petEvolve.clientWidth = (currWidth + 50) + "px"
+    }
 
 
-// let evolveTime = document.querySelector(".evolve")
-// evolveTime.addEventListener("click", evolve)
+let evolveTime = document.querySelector(".evolve")
+evolveTime.addEventListener("click", evolve)
 
-// console.log(evolve)
+console.log(evolve)
 
 
 
